@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      jokenpo
+    </title>
+    <style>
+      /*
+        comentario para CSS
+      */
+      body{
+        background-color: rgb(140, 221, 120);
+      }
+    </style>
+  </head>
+<body>
+  <!--
+    comentario para HTML
+  -->
+  <p>Pedra Papel Tesoura</p>
+  <button onclick="
+    const numeroRandom = Math.random();
+    let resultadoComp = '';
+
+    if (numeroRandom >= 0 && numeroRandom < 1/3){
+      resultadoComp = 'pedra';
+    } else if (numeroRandom >= 1/3 && numeroRandom < 2/3){
+      resultadoComp = 'papel';
+    } else if(numeroRandom >= 2/3 && numeroRandom < 1){
+      resultadoComp = 'tesoura';
+    }
+
+    let resultadoFinal = '';
+
+    if (resultadoComp === 'pedra'){
+      resultadoFinal = 'Empate';
+    } else if (resultadoComp === 'papel'){
+      resultadoFinal = 'Voce perdeu!';
+    } else if (resultadoComp === 'tesoura'){
+      resultadoFinal = 'Voce ganhou!';
+    }
+
+    alert(`Voce escolheu pedra. O computador escolheu ${resultadoComp}. ${resultadoFinal}` )
+  ">Pedra</button>
+
+  <button onclick="
+    const numeroRandom = Math.random();
+    let resultadoComp = '';
+
+    if (numeroRandom >= 0 && numeroRandom < 1/3){
+      resultadoComp = 'pedra';
+    } else if (numeroRandom >= 1/3 && numeroRandom < 2/3){
+      resultadoComp = 'papel';
+    } else if(numeroRandom >= 2/3 && numeroRandom < 1){
+      resultadoComp = 'tesoura';
+    }
+
+    let resultadoFinal = '';
+
+    if (resultadoComp === 'pedra'){
+      resultadoFinal = 'Voce ganhou!';
+    } else if (resultadoComp === 'papel'){
+      resultadoFinal = 'Empate!';
+    } else if (resultadoComp === 'tesoura'){
+      resultadoFinal = 'Voce perdeu!';
+    }
+
+    alert(`Voce escolheu papel. O computador escolheu ${resultadoComp}. ${resultadoFinal}` )
+  ">Papel</button>
+
+  <button onclick="
+    const numeroRandom = Math.random();
+    let resultadoComp = '';
+
+    if (numeroRandom >= 0 && numeroRandom < 1/3){
+      resultadoComp = 'pedra';
+    } else if (numeroRandom >= 1/3 && numeroRandom < 2/3){
+      resultadoComp = 'papel';
+    } else if(numeroRandom >= 2/3 && numeroRandom < 1){
+      resultadoComp = 'tesoura';
+    }
+
+    let resultadoFinal = '';
+
+    if (resultadoComp === 'pedra'){
+      resultadoFinal = 'Voce perdeu!';
+    } else if (resultadoComp === 'papel'){
+      resultadoFinal = 'Voce ganhou!';
+    } else if (resultadoComp === 'tesoura'){
+      resultadoFinal = 'Empate!'
+    }
+
+    alert(`Voce escolheu tesoura. O computador escolheu ${resultadoComp}. ${resultadoFinal}` )
+  ">Tesoura</button>
+  
+  <script>
+   
+  </script>
+</body>
+</html>

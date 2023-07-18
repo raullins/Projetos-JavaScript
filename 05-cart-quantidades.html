@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      variaveis
+    </title>
+    <style>
+      /*
+        comentario para CSS
+      */
+      body{
+        background-color: rgb(255, 220, 206);
+      }
+    </style>
+  </head>
+<body>
+  <!--
+    comentario para HTML
+  -->
+
+  <p>Quantidade do carrinho</p>
+
+  <button class="mostrarQtd" onclick="console.log(`Quantidade do carrinho: ${carrinho}`)">Mostrar quantidade</button>
+
+  <button class="addCarrinho" onclick="
+    addCarrinho(1);
+  ">Adicionar ao carrinho</button>
+
+  <button class="add2" onclick="
+    addCarrinho(2);
+  ">+2</button>
+
+  <button class="tira2" onclick="
+    tiraCarrinho(2);
+  ">-2</button>
+
+  <button class="add3" onclick="
+    addCarrinho(3);
+  ">+3</button>
+
+  <button class="tira3" onclick="
+    tiraCarrinho(3);
+  ">-3</button>
+  
+  <button class="reset" onclick="carrinho=0, console.log('Quantidade do carrinho: '+carrinho)">Resetar carrinho</button>
+
+  <script>
+    //testando comentario
+    //alert('helo');
+    let carrinho = 0;
+    const minCarrinho = 0;
+
+    function addCarrinho(valorAtt){
+      if((carrinho+valorAtt) > 10){
+        console.log('Carrinho está cheio!');
+      }else{
+        carrinho+=valorAtt;
+        console.log('Quantidade do carrinho: '+carrinho);
+      }
+    }
+
+    function tiraCarrinho(valorAtt){
+      if((carrinho-valorAtt) < 0){
+        console.log('Não há itens suficiente para tirar!');
+      }else{
+        carrinho-=valorAtt;
+        console.log('Quantidade do carrinho: '+carrinho);
+      }
+    }
+
+    const produto1 = {
+      nome: 'basketball',
+      preço: 2095
+    }
+
+    const produto2 = {
+      nome: 'basketball',
+      preço: 2090,
+    }
+
+    const produto3 = {
+      nome: 'foottball',
+      preço: 2090,
+    }
+
+    const produto4 = {
+      nome: 'basketball',
+      preço: 2090,
+    }
+
+
+    function comparaPreco(produto1, produto2){
+      if(produto1.nome === produto2.nome){
+        if (produto1.preço > produto2.preço){
+        return produto2;
+      } else if (produto1.preço < produto2.preço){
+        return produto1;
+      } else {
+        console.log ('Os dois produtos têm o mesmo preço')
+      };
+      }else{
+        console.log('São produtos diferentes')
+      }
+    }
+
+    console.log(comparaPreco(produto3, produto4));
+  </script>
+</body>
+</html>

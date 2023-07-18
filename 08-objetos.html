@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Objetos
+    </title>
+    <style>
+      /*
+        comentario para CSS
+      */
+      body{
+        background-color: rgb(101, 158, 87);
+      }
+    </style>
+  </head>
+<body>
+  <!--
+    comentario para HTML
+  -->
+  <script>
+    /*
+    const produto = {
+      nome: 'meias',
+      preco: 15
+    };
+
+    console.log(produto);
+    console.log(produto.preco);
+
+    produto.nome = 'meias de algodao'; 
+    console.log(produto);
+
+    produto.novaPropriedade = false;
+    console.log(produto);
+
+    delete produto.novaPropriedade;
+    console.log(produto);
+    
+    const produto2 = {
+      nome: 'camisa',
+      'tempo-entrega': '1 dia',
+      avaliaçao: {
+        nota: 4.7,
+        quantidadeDeNotas: 83
+      },
+      fun: function funcao1(){
+        console.log('Funcao dentro de objeto');
+      }
+    };
+
+    console.log(produto2);
+    console.log(produto2.avaliaçao.nota);
+
+    console.log(produto2['nome']);
+    console.log(produto2['tempo-entrega']);
+
+    produto2.fun();
+
+    console.log(JSON.stringify(produto2));
+    console.log(typeof JSON.stringify(produto2));
+
+    const jsonString = JSON.stringify(produto2);
+    console.log(JSON.parse(jsonString));
+    */
+
+    console.log('Hello'.length);
+    console.log('Hello'.toLowerCase());
+    console.log('Hello'.toUpperCase());
+
+    const objeto1 = {
+      mensagem: 'Hello!'
+    }
+    objeto2 = objeto1;
+
+    objeto1.mensagem = 'Hello world'
+    console.log(objeto1.mensagem);
+    console.log(objeto2.mensagem);
+
+    const objeto3 = {
+      mensagem: 'Hello world'
+    }
+
+    console.log(objeto1 === objeto2);
+    console.log(objeto1 === objeto3);
+
+    const objeto4 = {
+      mensagem: 'Camisa',
+      preco: 20,
+    };
+
+    const { mensagem, preco } = objeto4;
+    console.log(mensagem);
+    console.log(preco);
+
+    const objeto5 = {
+      mensagem,
+      metodo (){
+        console.log('metodo')
+      }
+    };
+
+    console.log(objeto5);
+    objeto5.metodo();
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body{
+        background-color: rgb(255, 220, 206);
+      }
+    </style>
+  </head>
+  <body>
+
+    <p>Teste sua sorte!</p>
+
+    <button onclick="
+      resultadoJogo('cara')
+    ">Cara</button>
+
+    <button onclick="
+      resultadoJogo('coroa')
+    ">Coroa</button>
+
+    <button onclick="
+      console.log(`Vitorias: ${placar.vitorias}, Derrotas: ${placar.derrotas}`);
+    ">Ver placar</button>
+
+    <button onclick="
+      placar.derrotas=0;
+      placar.vitorias=0
+    ">Resetar placar</button>
+
+    <script>
+      let placar = JSON.parse(localStorage.getItem('placar')) || {
+        vitorias: 0,
+        derrotas:0
+      }
+
+      /*
+      const placar = {
+        vitorias: 0,
+        derrotas:0
+      }
+      */
+
+      function resultadoJogo(escolhaDoJogador){
+        const resultadoComp = jogarMoeda();
+        resultadoFianl = '';
+
+        if(escolhaDoJogador === 'cara'){
+          if(resultadoComp === 'cara'){
+            placar.vitorias+=1,
+            console.log(`Você ganhou!\nVitórias: ${placar.vitorias}, Derrotas: ${placar.derrotas}`)
+          }else{
+            placar.derrotas+=1,
+            console.log(`Você perdeu!\nVitórias: ${placar.vitorias}, Derrotas: ${placar.derrotas}`)
+          }
+
+        }else{
+          if(resultadoComp === 'coroa'){
+            placar.vitorias+=1
+            console.log(`Você ganhou!\nVitórias: ${placar.vitorias}, Derrotas: ${placar.derrotas}`)
+            
+          }else{
+            placar.derrotas+=1
+            console.log(`Você perdeu!\nVitórias: ${placar.vitorias}, Derrotas: ${placar.derrotas}`)
+            
+          }
+        }
+
+        localStorage.setItem('placar', JSON.stringify(placar));
+      }
+
+      function jogarMoeda(){
+        let resultadoComp = '';
+        const numeroRandom = Math.random();
+
+        if (numeroRandom >= 0 && numeroRandom < 1/2){
+          resultadoComp = 'coroa';
+        } else{
+          resultadoComp = 'cara';
+        }
+
+        return resultadoComp;
+      }
+
+    </script>
+  </body>
+</html>
