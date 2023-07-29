@@ -11,17 +11,25 @@
     </style>
   </head>
 <body>
-  <p>Botão 'Increver-se' do YouTube</p>
-  <button onclick="inscrever()" class="inscBotao">Increver-se</button>
+  <p style="font-weight: bold;">Botão 'Increver-se' do YouTube</p>
+  <button style="
+    margin-block-end: 30px;
+  "onclick="inscrever()" class="inscBotao">Increver-se</button>
 
-  <p>Calculo de frete da Amazon</p>
+  <p style="font-weight: bold;">Calculo de frete da Amazon</p>
   <p>Pedidos abaixo de R$50 = +R$10 de frete.</p>
   <p>Pedidos a partir de R$50 = frete grátis.</p>
   <input placeholder="Custo do pedido" class="inputPrecoPedido" onkeydown="calcularPorEnter(event);">
   <button onclick="
     calcularPedido();
   ">Calcular</button>
-  <p class="resultado"></p>
+  <p style="
+    margin-block-end: 50px;
+  "class="resultado"></p>
+
+  <p style="font-weight: bold;">Repetidor</p>
+  <input placeholder="Digite algo" class="desafio9H" onkeyup="mostrarTeclaApertada();">
+  <p class="resultadoTeclasApertadas"></p>
 
   <script>
     function calcularPorEnter(event){
@@ -49,6 +57,13 @@
       }else{
         elementoIntBotao.innerHTML = 'Inscrever-se';
       }
+    }
+
+    function mostrarTeclaApertada(){
+      const elementoDesafio9H = document.querySelector('.desafio9H');
+      let resultadoTeclasApertadas = elementoDesafio9H.value;
+      
+      document.querySelector('.resultadoTeclasApertadas').innerHTML = resultadoTeclasApertadas;
     }
 
   </script>

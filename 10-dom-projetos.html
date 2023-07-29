@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      DOM Projetos
+    </title>
+    <style>
+      body{
+        background-color: rgb(255, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .inscBotao{
+        border: none;
+        border-radius: 20px;
+        block-size: 30px;
+        inline-size: 100px;
+        background-color: rgb(0, 0, 0);
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .ehInscrito{
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .inputPrecoPedido{
+        padding: 10px;
+        font-size: medium;
+      }
+
+      .botaoCalcular{
+        padding: 12px 20px;
+        font-size: medium;
+        border: none;
+        background-color: green;
+        color: white;
+        cursor: pointer;
+      }
+
+      .botaoDesafio1,
+      .botaoDesafio2,
+      .botaoDesafio3{
+        background-color: rgb(212, 212, 212);
+        border-radius: 5px;
+        border: none;
+        padding: 10px 12px;
+        margin-inline-end: 10px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .botaoDesafioOn{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        border-radius: 5px;
+        border: none;
+        padding: 10px 12px;
+        margin-inline-end: 10px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <p style="font-weight: bold;">Botão 'Increver-se' do YouTube</p>
+    <button style="
+      margin-block-end: 30px;
+    "onclick="inscrever()" class="jsInscBotao inscBotao">Increver-se</button>
+
+    <p style="font-weight: bold;">Calculo de frete da Amazon</p>
+    <p>Pedidos abaixo de R$50 = +R$10 de frete.</p>
+    <p>Pedidos a partir de R$50 = frete grátis.</p>
+    <input placeholder="Custo do pedido" class="jsInputPrecoPedido inputPrecoPedido" onkeydown="calcularPorEnter(event);">
+    <button onclick="
+      calcularPedido();
+    " class="botaoCalcular">Calcular</button>
+    <p style="
+      margin-block-end: 50px;
+    "class="resultado"></p>
+
+    <p style="font-weight: bold;">Repetidor</p>
+    <input placeholder="Digite algo" class="desafio9H" onkeyup="mostrarTeclaApertada();">
+    <p class="resultadoTeclasApertadas"></p>
+
+    <button onclick="selecionaSoUmBotao('botaoDesafio1')" class="botaoDesafio1">Tech</button>
+    <button onclick="selecionaSoUmBotao('botaoDesafio2')" class="botaoDesafio2">Gaming</button>
+    <button onclick="selecionaSoUmBotao('botaoDesafio3')" class="botaoDesafio3">Music</button>
+    
+
+    <script>
+      function calcularPorEnter(event){
+        if(event.key === 'Enter'){
+          calcularPedido();
+        }
+      }
+
+      function calcularPedido(){
+        const elementoDoInput = document.querySelector('.jsInputPrecoPedido');
+        let custoPedido = Number(elementoDoInput.value);
+
+        if(custoPedido < 50){
+          custoPedido = custoPedido + 10;
+        }
+
+        document.querySelector('.resultado').innerHTML = `R$${custoPedido}`;
+      }
+
+      function selecionaSoUmBotao(botaoDesafio){
+        const elementoBotao1 = document.querySelector('.botaoDesafio1')
+        const elementoBotao2 = document.querySelector('.botaoDesafio2')
+        const elementoBotao3 = document.querySelector('.botaoDesafio3')
+
+        
+          if (botaoDesafio === 'botaoDesafio1'){
+          elementoBotao1.classList.add('botaoDesafioOn')
+          elementoBotao2.classList.remove('botaoDesafioOn')
+          elementoBotao3.classList.remove('botaoDesafioOn')
+        } else if (botaoDesafio === 'botaoDesafio2'){
+          elementoBotao2.classList.add('botaoDesafioOn')
+          elementoBotao1.classList.remove('botaoDesafioOn')
+          elementoBotao3.classList.remove('botaoDesafioOn')
+        }else if (botaoDesafio === 'botaoDesafio3'){
+          elementoBotao3.classList.add('botaoDesafioOn')
+          elementoBotao1.classList.remove('botaoDesafioOn')
+          elementoBotao2.classList.remove('botaoDesafioOn')
+        }
+        
+      }
+
+      function inscrever(){
+        const elementoIntBotao =  document.querySelector('.jsInscBotao');
+
+        if (elementoIntBotao.innerText === 'Inscrever-se'){
+          elementoIntBotao.innerHTML = 'Inscrito';
+          elementoIntBotao.classList.add('ehInscrito');
+        }else{
+          elementoIntBotao.innerHTML = 'Inscrever-se';
+          elementoIntBotao.classList.remove('ehInscrito');
+        }
+      }
+
+      function mostrarTeclaApertada(){
+        const elementoDesafio9H = document.querySelector('.desafio9H');
+        
+        let resultadoTeclasApertadas = elementoDesafio9H.value;
+        
+        document.querySelector('.resultadoTeclasApertadas').innerHTML = resultadoTeclasApertadas;
+      }
+
+    </script>
+  </body>
+</html>

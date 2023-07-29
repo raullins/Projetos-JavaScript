@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      jokenpo
+    </title>
+    <link rel="stylesheet" href="styles/10-jokenpo.css">
+  </head>
+<body>
+  <!--
+    comentario para HTML
+  -->
+  <p class="titulo">Pedra Papel Tesoura</p>
+
+  <button onclick="
+    jogarJokenpo('pedra');
+  " class="botaoDeJogada"><img src="Imagens/pedra-emoji.png" class="iconeJogada"></button>
+
+  <button onclick="
+    jogarJokenpo('papel');
+  " class="botaoDeJogada"><img src="Imagens/papel-emoji.png" class="iconeJogada"></button>
+
+  <button onclick="
+    jogarJokenpo('tesoura');
+  " class="botaoDeJogada"><img src="Imagens/tesoura-emoji.png" class="iconeJogada"></button>
+
+  <p class="js-resultado resultado"></p>
+  <p class="js-jogadas jogadas"></p>
+  <p class="js-placar placar"></p>
+
+  <button onclick="
+    placar.derrotas=0;
+    placar.vitorias=0;
+    placar.empates=0;
+    localStorage.removeItem('placar');
+    mostrarEAttPlacar();
+  " class="resetBotao">Resetar placar</button>
+  
+  <script src="scripts/10-jokenpo.js"></script>
+</body>
+</html> 

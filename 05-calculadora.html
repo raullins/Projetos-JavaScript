@@ -2,32 +2,43 @@
 <html>
   <head></head>
   <body>
+    <p class="resultado"></p>
     <button onclick="attCalculadora('1')">1</button>
     <button onclick="attCalculadora('2')">2</button>
     <button onclick="attCalculadora('3')">3</button>
     <button onclick="attCalculadora('+')">+</button>
     <p></p>
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
+    <button onclick="attCalculadora('4')">4</button>
+    <button onclick="attCalculadora('5')">5</button>
+    <button onclick="attCalculadora('6')">6</button>
+    <button onclick="attCalculadora('-')">-</button>
+    <p></p>
+    <button onclick="attCalculadora('7')">7</button>
+    <button onclick="attCalculadora('8')">8</button>
+    <button onclick="attCalculadora('9')">9</button>
+    <button onclick="attCalculadora('/')">/</button>
+    <p></p>
+    <button onclick="attCalculadora('0')">0</button>
+    <button onclick="attCalculadora('-')">-</button>
+    <button onclick="darResultado()">=</button>
     <button onclick="attCalculadora('*')">*</button>
     <p></p>
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
-    <button>/</button>
-    <p></p>
-    <button>-</button>
-    <button onclick="console.log(eval(valorResultado))">=</button>
-    <button onclick="valorResultado--, console.log(valorResultado)"><--</button>
-    <button onclick="valorResultado='', console.log(valorResultado)">Resetar</button>
+    <button onclick="valorResultado='0' ,darResultado()">Resetar</button>
 
     <script>
-      function attCalculadora(caracter){
-        valorResultado+=caracter;
-        console.log(valorResultado);
-      }
       let valorResultado='';
+
+      function attCalculadora(caracter){
+        const resultado = document.querySelector('.resultado')
+        
+        valorResultado += caracter
+        resultado.innerHTML += caracter
+      }
+
+      function darResultado(){
+        document.querySelector('.resultado').innerHTML = eval(valorResultado)
+      }
+    
     </script>
   </body>
 </html>
